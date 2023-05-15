@@ -1,0 +1,22 @@
+﻿<!--Receiving the information from the controller-->
+@model List<MvcApplication1.Models.Employee>
+
+<!--When you need to use the properties of the model to insert the information-->
+@using MvcApplication1.Models
+
+@{
+    ViewBag.Title = "Employee list";
+}
+
+<h2>Employee list</h2>
+<div>
+    <ul>
+        
+            @foreach (Employee employees in @Model)
+            {
+                <li>
+                  @Html.ActionLink(employees.name, "Details", new {id = employees.employeeId })
+                </li>
+            }
+    </ul>
+</div>
